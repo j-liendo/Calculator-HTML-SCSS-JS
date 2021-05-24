@@ -110,7 +110,7 @@ body {
   }
 }
 
-a {
+button {
   text-decoration: none;
   color: white;
 }
@@ -162,6 +162,36 @@ a {
 .scroll::-webkit-scrollbar-track:hover,
 .scroll::-webkit-scrollbar-track:active {
   background: #d4d4d441;
+}
+
+.btn-fade-up {
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btn-fade-up:hover {
+  background-color: rgba(255, 255, 255, 0.452);
+}
+
+.btn-fade-up:not(hover) {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.btn-fade-in {
+  opacity: 0.6;
+}
+
+.btn-fade-in:hover {
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btn-fade-in:not(hover) {
+  opacity: 0.6;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .table {
