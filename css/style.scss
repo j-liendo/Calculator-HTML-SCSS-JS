@@ -139,10 +139,11 @@ button {
 }
 
 // btn effects
+$transition-btn-hover: 0.5s;
 //Up
 .btn-fade-up {
     background-color: $transparent;
-    transition: 0.5s;
+    transition: $transition-btn-hover;
 }
 
 .btn-fade-up:hover {
@@ -154,18 +155,19 @@ button {
 }
 
 //in
+$initial-transparent: 0.6;
 .btn-fade-in {
-    opacity: 0.6;
+    opacity: $initial-transparent;
 }
 
 .btn-fade-in:hover {
     opacity: 1;
-    transition: 0.5s;
+    transition: $transition-btn-hover;
 }
 
 .btn-fade-in:not(hover) {
-    opacity: 0.6;
-    transition: 0.5s;
+    opacity: $initial-transparent;
+    transition: $transition-btn-hover;
 }
 
 // Table
