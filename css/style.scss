@@ -6,17 +6,6 @@ $red: #e63947cb;
 $dark-sky-blue: rgba(140, 187, 213, 0.842);
 $jet: #2b2c2c;
 $transparent: rgba(0, 0, 0, 0);
-//Bg
-$midnight-blue: rgb(12, 18, 58);
-$midnight-blue-2: rgb(3, 9, 51);
-$royal-blue-dark: rgb(1, 6, 39);
-$oxford-blue: #000737ff;
-$oxford-blue-2: #00062eff;
-$oxford-blue-3: #000525ff;
-$xiketic: #00041cff;
-$rich-black-fogra-29: #000212ff;
-$black: #000109ff;
-$black-2: #000000ff;
 //Bg-2
 $orange: #e26d2c;
 $purple: #b30d32;
@@ -35,58 +24,6 @@ body {
     background: url(/img/bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
-}
-
-//Scroll Bar
-// .color-change-5x {
-//     animation: color-change-3x-animate 8s linear infinite alternate both;
-// }
-@keyframes color-change-3x-animate {
-    0% {
-        background-color: $orange;
-    }
-    50% {
-        background-color: $purple;
-    }
-    100% {
-        background-color: $blue-marine;
-    }
-}
-
-@keyframes color-change-10x-dark {
-    0% {
-        background: $midnight-blue;
-    }
-    10% {
-        background: $midnight-blue-2;
-    }
-    20% {
-        background: $royal-blue-dark;
-    }
-    30% {
-        background: $oxford-blue;
-    }
-    40% {
-        background: $oxford-blue-2;
-    }
-    50% {
-        background: $oxford-blue-3;
-    }
-    60% {
-        background: $xiketic;
-    }
-    70% {
-        background: $rich-black-fogra-29;
-    }
-    80% {
-        background: $black;
-    }
-    90% {
-        background: $black-2;
-    }
-    100% {
-        background: black;
-    }
 }
 
 button {
