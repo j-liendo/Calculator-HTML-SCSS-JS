@@ -1,5 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap");
 html {
-  font-family: monospace;
+  font-family: 'Roboto Mono', monospace;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 62.5%;
@@ -115,12 +116,13 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-size: 48px;
+  font-size: 4.8rem;
   height: calc(30px + 10px + 10px + 5px + 32px + 32px);
   padding-top: 10px;
 }
 
 .table-screen-control {
+  font-size: 4.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,13 +182,14 @@ button {
 }
 
 .table-btns-op {
-  font-weight: 700;
+  font-weight: 500;
   background-color: rgba(255, 255, 255, 0.658);
   color: #2b2c2c;
 }
 
 .table-btns-master {
-  font-weight: 700;
+  font-size: 2.4rem;
+  font-weight: 500;
   background-color: #e63947cb;
 }
 
@@ -194,7 +197,7 @@ button {
   height: 100%;
   background-color: rgba(140, 187, 213, 0.842);
   color: #2b2c2c;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .table-btns-0 {
