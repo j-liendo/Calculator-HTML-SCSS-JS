@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap");
 html {
-  font-family: 'Nanum Gothic Coding', monospace;
+  font-family: monospace;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 62.5%;
@@ -102,7 +101,6 @@ button {
   width: 320px;
   border-radius: 16px;
   overflow: hidden;
-  font-size: 2.4rem;
   color: white;
 }
 
@@ -117,7 +115,7 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-size: calc(1em + 1vw);
+  font-size: 48px;
   height: calc(30px + 10px + 10px + 5px + 32px + 32px);
   padding-top: 10px;
 }
@@ -155,6 +153,7 @@ button {
 }
 
 .table-btns {
+  font-size: 2.8rem;
   padding: 10px;
   border-top: 5px solid white;
   width: 100%;
