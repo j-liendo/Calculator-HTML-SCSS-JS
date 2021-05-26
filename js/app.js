@@ -1,7 +1,9 @@
 /* 
 -Nombre: App.js 
 -Version: 0.1
--Funcion principal: calculadora
+-Funciones: escribir-calcular-mostrar resultados
+-Funciones por realizar: calcular-mostrar resultados
+-Funciones hechas: escribir
 -Descripcion detallada: 
     Programa en js encargado de la escritura
     en pantalla y en calcular el 'input' de la
