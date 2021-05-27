@@ -129,6 +129,7 @@ $initial-transparent: 0.6;
             flex-direction: row;
             align-items: center;
             overflow-x: auto;
+            overflow-y: visible;
             padding: 5px 10px 2.5px 10px;
         }
         &-result {
@@ -136,6 +137,7 @@ $initial-transparent: 0.6;
             flex-direction: column;
             justify-content: center;
             overflow-x: auto;
+            overflow-y: visible;
             text-align: right;
             padding: 0px 10px 10px 10px;
         }

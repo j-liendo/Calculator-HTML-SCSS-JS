@@ -135,6 +135,7 @@ button {
       -ms-flex-align: center;
           align-items: center;
   overflow-x: auto;
+  overflow-y: visible;
   padding: 5px 10px 2.5px 10px;
 }
 
@@ -150,6 +151,7 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
   overflow-x: auto;
+  overflow-y: visible;
   text-align: right;
   padding: 0px 10px 10px 10px;
 }
