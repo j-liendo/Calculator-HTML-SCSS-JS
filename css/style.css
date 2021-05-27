@@ -122,6 +122,7 @@ button {
 }
 
 .table-screen-control {
+  color: rgba(255, 255, 255, 0.658);
   font-size: 4.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -149,7 +150,6 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
   overflow-x: auto;
-  color: rgba(255, 255, 255, 0.658);
   text-align: right;
   padding: 0px 10px 10px 10px;
 }

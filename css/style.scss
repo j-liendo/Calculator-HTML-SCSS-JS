@@ -123,6 +123,7 @@ $initial-transparent: 0.6;
         height: calc(30px + 10px + 10px + 5px + 32px + 32px);
         padding-top: 10px;
         &-control {
+            color: $secondary;
             font-size: 4.2rem;
             display: flex;
             flex-direction: row;
@@ -135,7 +136,6 @@ $initial-transparent: 0.6;
             flex-direction: column;
             justify-content: center;
             overflow-x: auto;
-            color: $secondary;
             text-align: right;
             padding: 0px 10px 10px 10px;
         }
