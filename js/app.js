@@ -17,8 +17,10 @@
 
 //Variables preliminares
 var input = '';
+var output = '';
 var validCharacters = [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
 var validOpsMaster = [8, 13];
+console.log('input: ');
 
 // Funciones de operaciones (+-*/)
 var ops = {
@@ -39,15 +41,39 @@ var ops = {
     }
 }
 
+function calculate(str) {
+    str = str.replace('÷', '/')
+    str = str.replace('x', '*')
+    var index = [];
+    for (var i = 0; i < str.length; i++) {
+        if (str[i].toLowerCase() === ".") index.push(i);
+    }
+    if (index.length > 1) {
+        console.log('Error: Existen mas de un punto flotante');
+    } else if (input == '') {
+        console.log('Error: Input vacio');
+    } else {
+        // console.log('input:' + input + '; output:' + output);
+        var result = eval(str);
+        output = result.toString();
+        console.log(output);
+        writeOnScreen()
+    }
+}
+
 // Escribe en la pantalla
 function writeOnScreen() {
     //Ver ifica si hay que escribir el cero predeterminado
     if (input == '') {
-        control.innerHTML = '0';
+        document.getElementById("control").innerHTML = '0';
     } else {
         //Escribe el input en el html
-        control.innerHTML = input;
-
+        document.getElementById("control").innerHTML = input;
+    }
+    if (output != '') {
+        document.getElementById("result").innerHTML = output;
+    } else {
+        document.getElementById("result").innerHTML = '0';
     }
 }
 
@@ -118,6 +144,7 @@ function writeFromScreen(char) {
 // Funcion de limpiado (Solo input)
 function clean() {
     input = '';
+    output = '';
     writeOnScreen();
 }
 
