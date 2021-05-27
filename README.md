@@ -1,14 +1,14 @@
-# Calculadora
+# Basic Calculator
 
-Este es un proyecto para probar mis habilidades basicas con Javascrpit.
+This is a project to test my basic skills with Javascrpit.
 
-## Especificaciones del proyecto
+## Project detail
 
-Es una **Calculadora** y ya!
+It's a **Calculator** and that's it!
 
-## Claves de teclas
+## Keyboard's code
 
-|  Tecla  |  Clave  |
+|  Keyboard  |  Code  |
 |:-------:|:-------:|
 |Delete| <8>|
 |Enter| <13>|
