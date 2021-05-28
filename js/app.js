@@ -18,47 +18,63 @@
 //Variables preliminares
 var input = '';
 var output = '';
+var ans = '';
 var validCharacters = [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
 var validOpsMaster = [8, 13];
-console.log('input: ');
-
-// Funciones de operaciones (+-*/)
-var ops = {
-    plus: function plusNumbers(n1, n2) {
-        return (parseFloat(n1) + parseFloat(n2));
-    },
-
-    subtract: function subtractNumbers(n1, n2) {
-        return (parseFloat(n1) - parseFloat(n2));
-    },
-
-    multiply: function multiplyNumbers(n1, n2) {
-        return (parseFloat(n1) * parseFloat(n2));
-    },
-
-    divide: function divideNumbers(n1, n2) {
-        return (parseFloat(n1) / parseFloat(n2));
-    }
-}
+var ops = [42, 43, 45, 47];
 
 function calculate(str) {
-    str = str.replace('÷', '/')
-    str = str.replace('x', '*')
-    var index = [];
+    str = str.replace('÷', '/');
+    str = str.replace('x', '*');
+    var j = 0;
     for (var i = 0; i < str.length; i++) {
-        if (str[i].toLowerCase() === ".") index.push(i);
+        if (str[i].toLowerCase() === ".") {
+            j++;
+        };
+        if (ops.includes(parseInt(str[i]))) {
+            j = 0;
+        }
+        if (j > 1) {
+            console.log('Error: Existen mas de un punto flotante');
+            break;
+        }
     }
-    if (index.length > 1) {
-        console.log('Error: Existen mas de un punto flotante');
-    } else if (input == '') {
+    if (input == '') {
         console.log('Error: Input vacio');
+    } else if (str[0] == '*' || str[0] == '/') {
+        console.log('Error: Syntaxis error');
     } else {
         // console.log('input:' + input + '; output:' + output);
         var result = eval(str);
         output = result.toString();
         console.log(output);
+        output = outputFix(output);
         writeOnScreen()
+        input = ''
     }
+}
+
+// Fix output
+function outputFix(str) {
+    var j = 0;
+    var nextPoint = false;
+    for (var i = 0; i < str.length; i++) {
+        if (str[i] == '.') {
+            nextPoint = true;
+        }
+        if (nextPoint) {
+            if (str[i] == str[i - 1]) {
+                if (str[i] == '0') {
+                    str = str.slice(0, (i - 1));
+                    return str;
+                } else {
+                    str = str.slice(0, (i + 1));
+                    return str;
+                }
+            }
+        }
+    }
+    return str;
 }
 
 // Escribe en la pantalla
@@ -87,8 +103,7 @@ window.onload = function() {
 function writeFromKeyboard(evObject) {
 
     var msg = '';
-    code = evObject.which; //|| evObject.keyCode;
-    // code = evObject.key;
+    code = evObject.which;
     char = ''
     var char = String.fromCharCode(code);
 
