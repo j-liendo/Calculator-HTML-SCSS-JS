@@ -12,13 +12,14 @@
     HTML 'index.html'.
 -Diccionario:
     *Del/del = Delete
-    *Ops = Operadores (+-*)
+    *Ops = Operadores (+-*÷)
 */
 
 //Variables preliminares
 var input = '';
 var output = '';
 var ans = '';
+var sAns = 'Ans';
 var validCharacters = [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
 var validOpsMaster = [8, 13];
 var ops = [42, 43, 45, 47];
@@ -26,6 +27,7 @@ var ops = [42, 43, 45, 47];
 function calculate(str) {
     str = str.replace('÷', '/');
     str = str.replace('x', '*');
+    str = str.replace(sAns, ans);
     var j = 0;
     for (var i = 0; i < str.length; i++) {
         if (str[i].toLowerCase() === ".") {
@@ -49,6 +51,7 @@ function calculate(str) {
         output = result.toString();
         console.log(output);
         output = outputFix(output);
+        ans = output;
         writeOnScreen()
         input = ''
     }
@@ -114,9 +117,17 @@ function writeFromKeyboard(evObject) {
 
     //Verifica si es un caracter valido
     if (validCharacters.includes(code)) {
-        msg = char;
-        input += msg;
-        writeOnScreen();
+
+        if (output != '' && ops.includes(code)) {
+            msg = sAns + char;
+            input += msg;
+            writeOnScreen();
+        } else {
+            console.log('xd')
+            msg = char;
+            input += msg;
+            writeOnScreen();
+        }
     }
 
 }
@@ -131,6 +142,9 @@ function opsMaster(evObject) {
             del();
             writeOnScreen();
             break;
+        case 13:
+            calculate(input)
+            break;
         default:
             break;
     }
@@ -138,7 +152,8 @@ function opsMaster(evObject) {
 
 // Funcion de escritura de la screen
 function writeFromScreen(char) {
-    op = ['equals', 'ac', 'del']
+    op = ['equals', 'ac', 'del'];
+    op2 = ['+', '-', '*', '/', 'x', '÷'];
     if (op.includes(char)) {
         switch (char) {
             case 'ac':
@@ -151,8 +166,13 @@ function writeFromScreen(char) {
                 break;
         }
     } else {
-        input += char;
-        writeOnScreen();
+        if (output != '' && op2.includes(char)) {
+            input += sAns + char;
+            writeOnScreen();
+        } else {
+            input += char;
+            writeOnScreen();
+        }
     }
 }
 
