@@ -119,7 +119,7 @@ function writeFromKeyboard(evObject) {
     if (validCharacters.includes(code)) {
 
         if (output != '' && ops.includes(code)) {
-            msg = sAns + char;
+            msg = char;
             input += msg;
             writeOnScreen();
         } else {
@@ -167,7 +167,7 @@ function writeFromScreen(char) {
         }
     } else {
         if (output != '' && op2.includes(char)) {
-            input += sAns + char;
+            input += char;
             writeOnScreen();
         } else {
             input += char;
