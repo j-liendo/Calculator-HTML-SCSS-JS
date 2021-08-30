@@ -140,6 +140,9 @@ $initial-transparent: 0.6;
             overflow-y: visible;
             text-align: right;
             padding: 0px 10px 10px 10px;
+            #result {
+                margin: 0;
+            }
         }
     }
     &-btns {

@@ -38,20 +38,23 @@ function calculate(str) {
         }
         if (j > 1) {
             console.log('Error: Existen mas de un punto flotante');
+            errorOut();
             break;
         }
     }
     if (input == '') {
         console.log('Error: Input vacio');
+        errorOut();
     } else if (str[0] == '*' || str[0] == '/') {
         console.log('Error: Syntaxis error');
+        errorOut();
     } else {
         // console.log('input:' + input + '; output:' + output);
         var result = eval(str);
         output = result.toString();
-        console.log(output);
         output = outputFix(output);
         ans = output;
+        console.log(ans);
         writeOnScreen()
         input = ''
     }
@@ -118,8 +121,8 @@ function writeFromKeyboard(evObject) {
     //Verifica si es un caracter valido
     if (validCharacters.includes(code)) {
 
-        if (output != '' && ops.includes(code)) {
-            msg = char;
+        if (output != '' && ops.includes(code) && input == '') {
+            msg = sAns + char;
             input += msg;
             writeOnScreen();
         } else {
@@ -166,8 +169,8 @@ function writeFromScreen(char) {
                 break;
         }
     } else {
-        if (output != '' && op2.includes(char)) {
-            input += char;
+        if (output != '' && op2.includes(char) && input == '') {
+            input += sAns + char;
             writeOnScreen();
         } else {
             input += char;
@@ -186,6 +189,12 @@ function clean() {
 // Funcion de la tecla delete (keybord/btnScreen)
 function del() {
     input = input.slice(0, -1)
+}
+
+function errorOut() {
+    output = "ERROR";
+    input = '';
+    writeOnScreen();
 }
 
 // Se escribe al principio de la pantalla

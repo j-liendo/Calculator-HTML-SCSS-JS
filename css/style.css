@@ -156,6 +156,10 @@ button {
   padding: 0px 10px 10px 10px;
 }
 
+.table-screen-result #result {
+  margin: 0;
+}
+
 .table-btns {
   font-size: 2.8rem;
   padding: 10px;
